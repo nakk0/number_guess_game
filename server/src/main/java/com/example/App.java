@@ -23,8 +23,11 @@ public class App
             
             System.out.println("client connected");
             int clientGuess = -1;
+            int guessCounter = 0;
             do{
                 clientGuess = Integer.parseInt(in.readLine());
+                guessCounter++;
+                System.out.println("guess number " + guessCounter);
                 System.out.println("number received from client: " + clientGuess);
                 out.writeBytes((clientGuess < randomNumber ? 
                                 "1" : 
@@ -32,6 +35,7 @@ public class App
                                 "2" :
                                 "3") + '\n');
             }while(clientGuess != randomNumber);
+            System.err.println("client guessed correctly in " + guessCounter + " tries");
             client.close();
         }catch(Exception e){
             System.out.println(e.getMessage());
