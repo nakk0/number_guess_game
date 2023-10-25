@@ -35,7 +35,7 @@ public class App
                                 "2" :
                                 "3") + '\n');
             }while(clientGuess != randomNumber);
-            System.err.println("client guessed correctly in " + guessCounter + " tries");
+            System.out.println("client guessed correctly in " + guessCounter + " tries");
             client.close();
         }catch(Exception e){
             System.out.println(e.getMessage());
